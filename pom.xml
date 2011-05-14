@@ -1,0 +1,165 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>name.ruhkopf.patrick</groupId>
+    <artifactId>maps42</artifactId>
+    <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>maps42 Jersey Webapp</name>
+    <build>
+        <finalName>maps42</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.glassfish</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-eclipse-plugin</artifactId>
+		        <version>2.8</version>
+		        <configuration>
+					<wtpversion>1.5</wtpversion>
+					<!--
+		          <additionalProjectnatures>
+		            <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+		          </additionalProjectnatures>
+		          <additionalBuildcommands>
+		            <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+		          </additionalBuildcommands> -->
+		        </configuration>
+	      </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+    
+    	<!-- JERSEY -->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey-version}</version>
+        </dependency>
+        <dependency>
+	       <groupId>com.sun.jersey.contribs</groupId>
+	       <artifactId>jersey-spring</artifactId>
+	       <version>${jersey-version}</version>
+	   </dependency>
+	   
+        <!-- SPRING -->
+        
+		<!--
+		    Core utilities used by other modules.
+		    Define this if you use Spring Utility APIs (org.springframework.core.*/org.springframework.util.*)
+		-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-core</artifactId>
+		  <version>${org.springframework.version}</version>
+		</dependency>
+        <!--
+		    Expression Language (depends on spring-core)
+		    Define this if you use Spring Expression APIs (org.springframework.expression.*)
+		-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-expression</artifactId>
+		  <version>${org.springframework.version}</version>
+		</dependency>
+		
+		<!--
+		    Bean Factory and JavaBeans utilities (depends on spring-core)
+		    Define this if you use Spring Bean APIs (org.springframework.beans.*)
+		-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-beans</artifactId>
+		  <version>${org.springframework.version}</version>
+		</dependency>
+		
+		<!--
+		    Aspect Oriented Programming (AOP) Framework (depends on spring-core, spring-beans)
+		    Define this if you use Spring AOP APIs (org.springframework.aop.*)
+		-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-aop</artifactId>
+		  <version>${org.springframework.version}</version>
+		</dependency>
+		
+		<!--
+		    Application Context (depends on spring-core, spring-expression, spring-aop, spring-beans)
+		    This is the central artifact for Spring's Dependency Injection Container and is generally always defined
+		-->
+		<dependency>
+		  <groupId>org.springframework</groupId>
+		  <artifactId>spring-context</artifactId>
+		  <version>${org.springframework.version}</version>
+		</dependency>
+        
+        <!-- TEST -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey-version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.distributions</groupId>
+            <artifactId>web-all</artifactId>
+            <version>10.0-build-20080430</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.embedded</groupId>
+            <artifactId>gf-embedded-api</artifactId>
+            <version>1.0-alpha-4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <jersey-version>1.6</jersey-version>
+        <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
+    </properties>
+    <repositories>
+        <repository>
+            <id>glassfish-maven2-repository.dev.java.net</id>
+            <name>Java.net Maven 2 Repository for GlassFish</name>
+            <url>http://download.java.net/maven/glassfish/</url>
+            <layout>default</layout>
+        </repository>
+         <repository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Maven 2 Repository</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>maven2-repository.dev.java.net</id>
+            <name>Java.net Repository for Maven</name>
+            <url>http://download.java.net/maven/2/</url>
+            <layout>default</layout>
+        </pluginRepository>
+
+    </pluginRepositories>
+</project>
