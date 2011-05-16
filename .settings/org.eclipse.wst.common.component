@@ -54,6 +54,9 @@
     <dependent-module archiveName="jackson-xc-1.7.1.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/codehaus/jackson/jackson-xc/1.7.1/jackson-xc-1.7.1.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>
+    <dependent-module archiveName="JavaAPIforKml-2.2.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/de/micromata/jak/JavaAPIforKml/2.2.0-SNAPSHOT/JavaAPIforKml-2.2.0-SNAPSHOT.jar">
+      <dependency-type>uses</dependency-type>
+    </dependent-module>
     <dependent-module archiveName="javax.servlet-3.0.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/var/M2_REPO/org/glassfish/javax.servlet/3.0/javax.servlet-3.0.jar">
       <dependency-type>uses</dependency-type>
     </dependent-module>

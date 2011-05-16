@@ -1,5 +1,7 @@
 A simple example how to use the brand new Spring Data to access Mongo DB using RESTful Web Services (Jersey) all build with Maven.
 
+http://localhost:8080/maps42/webresources/documents
+
 For now all you can do is POST the following XML (it's close to and will be KML soon) to
 http://localhost:8080/maps42/webresources/places/
 

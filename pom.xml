@@ -57,6 +57,7 @@
 	       <artifactId>jersey-spring</artifactId>
 	       <version>${jersey-version}</version>
 	       <exclusions>
+	       	<!-- we will include the latest spring framework ourselves later -->
 	        <exclusion> 
 	          <groupId>org.springframework</groupId>
 	          <artifactId>spring-core</artifactId>
@@ -154,6 +155,26 @@
 			<version>2.2</version>
 		</dependency>
 
+		<!-- KML -->
+		<dependency>
+	      <groupId>de.micromata.jak</groupId>
+	      <artifactId>JavaAPIforKml</artifactId>
+	      <version>2.2.0-SNAPSHOT</version>
+	      <exclusions>
+	      	<!-- jaxb comes already with jersey -->
+	      	<exclusion> 
+				<groupId>com.sun.xml.bind</groupId>
+    			<artifactId>jaxb-xjc</artifactId>
+	        </exclusion>
+	        <!-- we might include it ourselves later as a testing dependency -->
+	        <exclusion>
+	        	 <groupId>xmlunit</groupId>
+   				 <artifactId>xmlunit</artifactId>
+	        </exclusion>
+	      </exclusions>
+	   </dependency>
+
+		<!-- TOOLS -->
 		<dependency>
 		    <groupId>commons-lang</groupId>
 		    <artifactId>commons-lang</artifactId>
